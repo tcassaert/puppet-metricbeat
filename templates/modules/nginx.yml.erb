@@ -1,0 +1,16 @@
+# This file is managed by Puppet, do not edit
+
+- module: <%= @module %>
+  metricsets:
+    - stubstatus
+  period: 10s
+
+  # Nginx hosts
+  hosts: <%= @nginx_hosts %>
+
+  # Path to server status. Default server-status
+  server_status_path: <%= @nginx_server_status_path %>
+
+<%- if @nginx_config_hash != nil -%>
+<%= @nginx_config_hash.to_yaml[4...-1] %>
+<%- end %>

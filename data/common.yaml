@@ -1,0 +1,12 @@
+---
+metricbeat::config_dir: '/etc/metricbeat'
+metricbeat::config_reload: true
+metricbeat::ensure: 'present'
+metricbeat::home_path: '/var/lib/metricbeat'
+metricbeat::logstash_loadbalance: true
+metricbeat::manage_repo: true
+metricbeat::modules_location: '/etc/metricbeat/modules.d'
+metricbeat::service_ensure: 'enabled'
+metricbeat::shipper_name: '%{::fqdn}'
+metricbeat::validate_config: true
+metricbeat::validate_cmd: '/bin/metricbeat test config'
