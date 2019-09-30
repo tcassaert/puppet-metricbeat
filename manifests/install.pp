@@ -26,5 +26,6 @@ class metricbeat::install (
   package { 'metricbeat':
     ensure  => $ensure,
     require => Yumrepo['elastic'],
+    notify  => Service['metricbeat'],
   }
 }
