@@ -33,14 +33,14 @@ metricbeat.config:
 <%- end -%>
 
 #================================ Outputs ======================================
-<% if @logstash_hosts != nil -%>
+<% if @logstash_hosts != nil and @logstash_hosts != [] -%>
 #----------------------------- Logstash output ---------------------------------
 output.logstash:
   enabled: true
   hosts: <%= @logstash_hosts %>
   loadbalance: <%= @logstash_loadbalance %>
 <%- end -%>
-<% if @elasticsearch_hosts != nil -%>
+<% if @elasticsearch_hosts != nil and @elasticsearch_hosts != [] -%>
 #-------------------------- Elasticsearch output -------------------------------
 output.elasticsearch:
   enabled: true
